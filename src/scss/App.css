@@ -1,0 +1,410 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F1F2F3;
+}
+.App__header {
+  width: 100%;
+  height: 50px;
+  background-color: #FFFFFF;
+}
+.App__MainBody {
+  display: flex;
+  position: relative;
+  width: 1140px;
+  height: 940px;
+  margin-top: 30px;
+}
+.App__MainBody__LeftBlock {
+  display: flex;
+  position: relative;
+  width: 366px;
+  height: 100%;
+  flex-direction: column;
+  margin-left: 30px;
+}
+.App__MainBody__LeftBlock__SearchBar {
+  display: flex;
+  width: 366px;
+  height: 60px;
+  background-color: white;
+  box-shadow: 0 1px 4px 0 rgba(19, 19, 19, 0.1);
+  border-radius: 4px;
+}
+.App__MainBody__LeftBlock__SearchBar__Input {
+  display: flex;
+  position: relative;
+  width: 298px;
+  height: 40px;
+  margin: 10px 0 10px 10px;
+  border-radius: 40px;
+  border: 2px solid #F1F2F3;
+}
+.App__MainBody__LeftBlock__SearchBar__Input__Icon {
+  display: flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 12px 0 12px 9px;
+}
+.App__MainBody__LeftBlock__SearchBar__Input__Field {
+  border: none;
+  margin: 10px 0 10px 10px;
+  width: 82%;
+  height: 20px;
+}
+.App__MainBody__LeftBlock__SearchBar__Input__Field:focus {
+  outline: none;
+}
+.App__MainBody__LeftBlock__SearchBar__CloseButton {
+  display: flex;
+  position: relative;
+  color: #616F82;
+  background-color: #F1F2F3;
+  width: 34px;
+  height: 34px;
+  margin: 13px 10px 13px auto;
+  border-radius: 20px;
+}
+.App__MainBody__LeftBlock__SearchBar__CloseButton:hover {
+  background-color: #4198C5;
+  cursor: pointer;
+}
+.App__MainBody__LeftBlock__SearchBar__Button {
+  display: flex;
+  position: relative;
+  margin: 13px 10px;
+  width: 34px;
+  height: 34px;
+  background-color: #E8E8E8;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.App__MainBody__LeftBlock__SearchBar__Button:hover {
+  background-color: #4198C5;
+  cursor: pointer;
+}
+.App__MainBody__LeftBlock__Counter {
+  width: 366px;
+  height: 20px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 260px;
+}
+.App__MainBody__LeftBlock__Counter__Value {
+  width: 28px;
+  height: 18px;
+  display: flex;
+  position: relative;
+  font-family: SF Pro Display, sans-serif;
+  margin-left: 15px;
+  color: white;
+  background-color: #616F82;
+  padding: 0 4px;
+  border-radius: 9px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  line-height: 14px;
+}
+.App__MainBody__LeftBlock__Counter__Search {
+  display: flex;
+  position: relative;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #616F82;
+  right: 10px;
+}
+.App__MainBody__LeftBlock__Counter__Search:hover {
+  cursor: pointer;
+}
+.App__MainBody__LeftBlock__Counter__LeftIcons {
+  display: flex;
+  position: relative;
+}
+.App__MainBody__LeftBlock__Counter__LeftIcons__CheckBox {
+  margin: 1px 0 1px 9px;
+  width: 18px;
+  height: 18px;
+}
+.App__MainBody__LeftBlock__Counter__LeftIcons__Text {
+  color: var(--unnamed, #616F82);
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 10px;
+}
+.App__MainBody__LeftBlock__Counter__RightIcons {
+  display: flex;
+  position: relative;
+}
+.App__MainBody__LeftBlock__Counter__RightIcons__Text {
+  color: var(--unnamed, #616F82);
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+.App__MainBody__LeftBlock__PatientsList {
+  display: flex;
+  position: relative;
+  width: 374px;
+  max-height: 840px;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 5px 4px 0px 4px;
+}
+.App__MainBody__LeftBlock__PatientsList__Card {
+  display: flex;
+  position: relative;
+  width: 366px;
+  height: 60px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  margin-left: -1px;
+  border-left: 2px solid #4198C5;
+  margin-top: 10px;
+  align-items: center;
+}
+.App__MainBody__LeftBlock__PatientsList__Card__CheckBox {
+  margin: 21px 0 21px 12px;
+  width: 18px;
+  height: 18px;
+}
+.App__MainBody__LeftBlock__PatientsList__Card__Photo {
+  display: flex;
+  position: relative;
+  background-color: #E8E8E8;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.App__MainBody__LeftBlock__PatientsList__Card__Text {
+  color: #161718;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.App__MainBody__RightBlock {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: 26px;
+  flex-direction: column;
+}
+.App__MainBody__RightBlock__PattientBlock {
+  display: flex;
+  position: relative;
+  width: 744px;
+  height: 110px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(30, 30, 30, 0.1);
+  margin-left: 4px;
+}
+.App__MainBody__RightBlock__PattientBlock__Image {
+  display: flex;
+  position: relative;
+  margin: 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+  background-color: black;
+  text-align: center;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+.App__MainBody__RightBlock__PattientBlock__InfoBlock {
+  display: flex;
+  position: relative;
+  width: 176px;
+  height: 100%;
+  margin-left: 4px;
+  flex-direction: column;
+}
+.App__MainBody__RightBlock__PattientBlock__InfoBlock__Name {
+  display: flex;
+  position: relative;
+  color: #161718;
+  font-family: SF Pro Display, sans-serif;
+  margin-top: 15px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.App__MainBody__RightBlock__PattientBlock__InfoBlock__Age {
+  display: flex;
+  position: relative;
+  color: #161718;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 6px;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpButton {
+  display: flex;
+  position: relative;
+  margin: 13px 16px 0 auto;
+  width: 34px;
+  height: 34px;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpButton__Image {
+  display: flex;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 34px;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpButton__Image:hover {
+  background: #4198C5;
+  cursor: pointer;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpWindow {
+  background-color: #FFFFFF;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 230px;
+  height: 88px;
+  box-shadow: 0 1px 4px 0 rgba(30, 30, 30, 0.1);
+  right: 20px;
+  top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpWindow__Button {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 230px;
+  height: 36px;
+  color: #161718;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpWindow__Button__Text {
+  margin-left: 10px;
+}
+.App__MainBody__RightBlock__PattientBlock__PopUpWindow__Button:hover {
+  background-color: #F1F2F3;
+  cursor: pointer;
+}
+.App__MainBody__RightBlock__PatientNavBar {
+  display: inline-flex;
+  position: relative;
+  margin-top: 10px;
+  width: 744px;
+  height: 26px;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.App__MainBody__RightBlock__PatientNavBar__NavButton {
+  display: flex;
+  position: relative;
+  color: #616F82;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 10px;
+}
+.App__MainBody__RightBlock__PatientNavBar__NavButton:hover {
+  cursor: pointer;
+}
+.App__MainBody__RightBlock__PatientNavBar__Partition {
+  width: 1px;
+  height: 18px;
+  background-color: #CDCDCD;
+}
+.App__MainBody__RightBlock__PatientNavBar__Add {
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  width: auto;
+  height: 26px;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.App__MainBody__RightBlock__PatientNavBar__Add__Button {
+  display: flex;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  margin: 0 10px 0 auto;
+}
+.App__MainBody__RightBlock__PatientNavBar__Add__Button:hover {
+  cursor: pointer;
+}
+.App__MainBody__RightBlock__NavBody {
+  width: 744px;
+  height: 784px;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0 1px 4px 0 rgba(30, 30, 30, 0.1);
+  margin-top: 10px;
+}
+.App__MainBody__RightBlock__NavBody__TextBody {
+  width: 680px;
+  height: 96px;
+  padding: 15px 0 5px 15px;
+}
+.App__MainBody__RightBlock__NavBody__TextBody__Date {
+  color: #616F82;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.App__MainBody__RightBlock__NavBody__TextBody__Text {
+  color: #161718;
+  margin-left: 10px;
+  font-family: SF Pro Display, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*# sourceMappingURL=App.css.map */

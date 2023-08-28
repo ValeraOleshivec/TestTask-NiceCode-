@@ -1,0 +1,411 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F1F2F3;
+  &__header{
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+  }
+  &__MainBody{
+    display: flex;
+    position: relative;
+    width: 1140px;
+    height: 940px;
+    margin-top: 30px;
+    &__LeftBlock{
+      display: flex;
+      position: relative;
+      width: 366px;
+      height: 100%;
+      flex-direction: column;
+      margin-left: 30px;
+        &__SearchBar{
+          display: flex;
+          width: 366px;
+          height: 60px;
+          background-color: white;
+          box-shadow: 0 1px 4px 0 rgba(19, 19, 19, 0.10);
+          border-radius: 4px;
+          &__Input{
+            display: flex;
+            position: relative;
+            width: 298px;
+            height: 40px;
+            margin: 10px 0 10px 10px;
+            border-radius: 40px;
+            border: 2px solid #F1F2F3;
+            &__Icon{
+              display: flex;
+              position: relative;
+              width: 20px;
+              height: 20px;
+              margin: 12px 0 12px 9px;
+            }
+            &__Field{
+              border: none;
+              margin: 10px 0 10px 10px;
+              width: 82%;
+              height: 20px;
+              &:focus{
+                outline: none;
+              }
+            }
+          }
+          &__CloseButton{
+            display: flex;
+            position: relative;
+            color: #616F82;
+            background-color: #F1F2F3;
+            width: 34px;
+            height: 34px;
+            margin: 13px 10px 13px auto;
+            border-radius: 20px;
+            &:hover{
+              background-color: #4198C5;
+              cursor: pointer;
+            }
+          }
+          &__Button{
+            display: flex;
+            position: relative;
+            margin:13px 10px;
+            width: 34px;
+            height: 34px;
+            background-color: #E8E8E8;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            border-radius: 50%;
+            &:hover{
+              background-color: #4198C5;
+              cursor: pointer;
+          }
+        }
+      }
+      &__Counter{
+        width: 366px;
+        height: 20px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap:260px;
+        &__Value{
+          width: 28px;
+          height: 18px;
+          display: flex;
+          position: relative;
+          font-family: SF Pro Display, sans-serif;
+          margin-left: 15px;
+          color: white;
+          background-color: #616F82;
+          padding: 0 4px;
+          border-radius: 9px;
+          font-size: 12px;
+          align-items: center;
+          justify-content: center;
+          line-height: 14px;
+        }
+        &__Search{
+          display: flex;
+          position: relative;
+          font-family: SF Pro Display, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          color:#616F82;
+          right: 10px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        &__LeftIcons{
+          display: flex;
+          position: relative;
+          &__CheckBox{
+            margin: 1px 0 1px 9px;
+            width: 18px;
+            height: 18px;
+          }
+          &__Text{
+            color: var(--unnamed, #616F82);
+            font-family: SF Pro Display, sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            margin-left: 10px;
+          }
+        }
+        &__RightIcons{
+          display: flex;
+          position: relative;
+          &__Text{
+            color: var(--unnamed, #616F82);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            margin-left: 12px;
+            cursor: pointer;
+          }
+        }
+      }
+      &__PatientsList{
+        display: flex;
+        position: relative;
+        width: 374px;
+        max-height: 840px;
+        flex-direction: column;
+        margin-top: 10px;
+        padding: 5px 4px 0px 4px;
+        &__Card{
+          display: flex;
+          position: relative;
+          width: 366px;
+          height: 60px;
+          background-color: #FFFFFF;
+          border-radius: 3px;
+          margin-left: -1px;
+          border-left: 2px solid #4198C5 ;
+          margin-top: 10px;
+          align-items: center;
+          &__CheckBox{
+            margin: 21px 0 21px 12px;
+            width: 18px;
+            height: 18px;
+          }
+          &__Photo{
+            display: flex;
+            position: relative;
+            background-color: #E8E8E8;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+          }
+          &__Text{
+            color: #161718;
+            font-family: SF Pro Display, sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    &__RightBlock{
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin-left: 26px;
+      flex-direction: column;
+      &__PattientBlock{
+        display: flex;
+        position: relative;
+        width: 744px;
+        height: 110px;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px 0 rgba(30, 30, 30, 0.10);
+        margin-left: 4px;
+        &__Image{
+          display: flex;
+          position: relative;
+          margin: 10px;
+          width: 90px;
+          height: 90px;
+          border-radius: 90px;
+          background-color: black;
+          text-align: center;
+          color: white;
+          align-items: center;
+          justify-content: center;
+        }
+        &__InfoBlock{
+          display: flex;
+          position: relative;
+          width: 176px;
+          height: 100%;
+          margin-left: 4px;
+          flex-direction: column;
+          &__Name{
+            display: flex;
+            position: relative;
+            color: #161718;
+            font-family: SF Pro Display, sans-serif;
+            margin-top: 15px;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+          }
+          &__Age{
+            display: flex;
+            position: relative;
+            color:  #161718;
+            font-family: SF Pro Display, sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 6px;
+          }
+        }
+        &__PopUpButton{
+          display: flex;
+          position: relative;
+          margin: 13px 16px 0 auto;
+          width: 34px;
+          height: 34px;
+          &__Image{
+            display: flex;
+            position: relative;
+            width: 34px;
+            height: 34px;
+            border-radius: 34px;
+            &:hover{
+              background: #4198C5;
+              cursor: pointer;
+            }
+          }
+        }
+        &__PopUpWindow{
+          background-color: #FFFFFF;
+          display: flex;
+          position: absolute;
+          flex-direction: column;
+          width: 230px;
+          height: 88px;
+          box-shadow: 0 1px 4px 0 rgba(30, 30, 30, 0.10);
+          right: 20px;
+          top:20px;
+          justify-content: center;
+          align-items: center;
+          &__Button{
+            align-items: center;
+            display: flex;
+            position: relative;
+            width: 230px;
+            height: 36px;
+            color: #161718;
+            font-family: SF Pro Display, sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            &__Text{
+              margin-left: 10px;
+            }
+            &:hover{
+              background-color: #F1F2F3;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &__PatientNavBar{
+        display: inline-flex;
+        position: relative;
+        margin-top: 10px;
+        width: 744px;
+        height: 26px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &__NavButton{
+          display: flex;
+          position: relative;
+          color: #616F82;
+          font-family: SF Pro Display, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          margin: 0 10px;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+        &__Partition{
+          width: 1px;
+          height: 18px;
+          background-color: #CDCDCD;
+        }
+        &__Add{
+          display: flex;
+          position: relative;
+          margin-left: auto;
+          width: auto;
+          height: 26px;
+          gap:10px;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          &__Button{
+            display: flex;
+            position: relative;
+            width: 26px;
+            height: 26px;
+            margin: 0 10px 0 auto;
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      &__NavBody{
+        width: 744px;
+        height: 784px;
+        border-radius: 4px;
+        background: #FFF;
+        box-shadow: 0 1px 4px 0 rgba(30, 30, 30, 0.10);
+        margin-top: 10px;
+        &__TextBody{
+          width: 680px;
+          height: 96px;
+          padding: 15px 0 5px 15px;
+          &__Date{
+            color: #616F82;
+            font-family: SF Pro Display, sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+          &__Text{
+            color: #161718;
+            margin-left: 10px;
+            font-family: SF Pro Display, sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
