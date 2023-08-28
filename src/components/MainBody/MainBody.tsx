@@ -4,7 +4,7 @@ import Patient from "./Patients/Patient";
 import { FiMoreHorizontal } from "react-icons/fi";
 import Partition from "./RightBlock/Partition/Partition";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import PattientBody from "./RightBlock/PattientBody/PattientBody";
+import Notes from "./RightBlock/PattientBody/Notes";
 import PatientBlock from "./RightBlock/PattientBlock/PatientBlock";
 import PatientNavBar from "./RightBlock/PatientNavBar/PatientNavBar";
 import PatientActiveChose from "./Patients/PatientActiveChose";
@@ -31,6 +31,11 @@ const MainBody = () => {
         }else setCurrentCount(currentCount-1)
         console.log(currentCount)
     }
+    const [checked,setChecked] = useState(false)
+    function setAll(setted:boolean){
+        setChecked(setted)
+        console.log(checked)
+    }
   return (
     <div className="App__MainBody">
       <div className="App__MainBody__LeftBlock">
@@ -38,12 +43,12 @@ const MainBody = () => {
           <Buttons />
         </div>
           <div>
-              {active ? <SelectInactive selectButton={selectButton} currentCount={currentCount}/> : <SelectActive selectButton={selectButton} currentCount={currentCount}/>}
+              {active ? <SelectInactive setAll={setAll} selectButton={selectButton} currentCount={currentCount}/> : <SelectActive selectButton={selectButton} currentCount={currentCount}/>}
           </div>
 
         <div className="App__MainBody__LeftBlock__PatientsList">
             {ArryPatient.map((value,index)=>(
-                <div>{active ? <PatientActiveChose key={index} updateCount={count}/> : <Patient/>}</div>
+                <div>{active ? <PatientActiveChose key={index} setted={checked} updateCount={count}/> : <Patient/>}</div>
             ))}
         </div>
       </div>
@@ -51,7 +56,7 @@ const MainBody = () => {
         <PatientBlock />
         <PatientNavBar />
         <div className="App__MainBody__RightBlock__NavBody">
-          <PattientBody />
+          <Notes />
           <div className="App__MainBody__RightBlock__NavBody__TextBody">
             <span className="App__MainBody__RightBlock__NavBody__TextBody__Date">
               20.12.2019
