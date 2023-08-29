@@ -199,6 +199,8 @@
             justify-content: center;
             align-items: center;
             margin: 10px;
+            background-size: cover;
+            background-repeat: no-repeat;
           }
           &__Text{
             color: #161718;
@@ -400,6 +402,117 @@
             font-style: normal;
             font-weight: 400;
             line-height: 24px;
+          }
+        }
+        &__ConsultTask{
+          display: flex;
+          position: relative;
+          width: 724px;
+          height: 66px;
+          border: 1px solid #CDCDCD;
+          margin: 10px 10px 0 10px;
+          border-radius: 4px;
+          &__Icon{
+            display: flex;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            background-color: #F1F2F3;
+            align-items: center;
+            justify-content: center;
+            color: #616F82;
+            margin: 11px 0 15px 10px;
+            &__Image{
+              height: 20px;
+              width: 20px;
+            }
+            }
+          &:focus{
+            border: 1px solid #4198C5;
+          }
+          &:focus &__Icon{
+            color:white;
+            background-color: #4198C5;
+          }
+          &__Heading{
+            display: flex;
+            position: relative;
+            color: var(--unnamed, #161718);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px; /* 100% */
+            margin: 11px 0 0 10px;
+          }
+          &__Date{
+            display: flex;
+            margin: 14px 0 8px 10px;
+            color: var(--unnamed, #616F82);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+          &__VideoImage{
+            width: 82px;
+            height: 46px;
+            background-color: black;
+            margin: 10px 0 10px 10px;
+          }
+          &__TextVideoBlock{
+            margin: 8px 0 0 10px;
+            color: var(--unnamed, #161718);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+          }
+          &__DoctorName{
+            margin: 17px 0 8px 10px;
+            color: var(--unnamed, #616F82);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+          &__DateBlock{
+            display: flex;
+            position: relative;
+            margin: auto 10px 0 auto;
+          }
+          &__TextEventBlock{
+            margin: 10px 0 10px 10px;
+            color: var(--unnamed, #161718);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+          }
+          &__EvenentDataBlock{
+            display: flex;
+            position: relative;
+            margin-top: 10px
+          }
+          &__VideoIcon {
+            width: 15px;
+            height: 15px;
+            color: #4198C5;
+          }
+          &__InfoEventText{
+            text-align: center;
+            margin-left: 6px;
+            color: var(--unnamed, #161718);
+            font-family: SF Pro Display,sans-serif;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
           }
         }
       }

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Buttons from "./SearchBarButtons/Buttons";
 import Patient from "./Patients/Patient";
 import { FiMoreHorizontal } from "react-icons/fi";
@@ -10,8 +10,23 @@ import PatientNavBar from "./RightBlock/PatientNavBar/PatientNavBar";
 import PatientActiveChose from "./Patients/PatientActiveChose";
 import SelectActive from "./LeftBlock/SelectActive";
 import SelectInactive from "./LeftBlock/SelectInactive";
+import Consultation from "./RightBlock/PattientBody/Consultation";
+import Video from "./RightBlock/PattientBody/Video";
+import Event from "./RightBlock/PattientBody/Event";
 
 const MainBody = () => {
+
+
+    let [people,setPeople] = useState([])
+
+
+    const ArrayComponents:Array<any>=[
+        <Notes/>,
+        <Consultation/>,
+        <Video/>,
+        <Event/>
+
+    ]
 
     const ArryPatient:Array<number>=[
         1,2,3,4,5,6,7,8,9,10,11,12
@@ -32,10 +47,25 @@ const MainBody = () => {
         console.log(currentCount)
     }
     const [checked,setChecked] = useState(false)
+    const [currentActive,setNavigate]=useState(0)
     function setAll(setted:boolean){
         setChecked(setted)
         console.log(checked)
     }
+    let ActiveBar:number = 0
+    function checkActive(currentActive:number){
+        setNavigate(currentActive)
+        console.log(ActiveBar)
+    }
+    useEffect(()=>{
+        fetch("https://64ed912a1f87218271416407.mockapi.io/People").then((res)=>{
+            return res.json();
+        }).then((arr)=>{
+            setPeople(arr);
+        })
+    },[])
+
+
   return (
     <div className="App__MainBody">
       <div className="App__MainBody__LeftBlock">
@@ -47,28 +77,16 @@ const MainBody = () => {
           </div>
 
         <div className="App__MainBody__LeftBlock__PatientsList">
-            {ArryPatient.map((value,index)=>(
-                <div>{active ? <PatientActiveChose key={index} setted={checked} updateCount={count}/> : <Patient/>}</div>
+            {people.map((obj,index)=>(
+                <div>{active ? <PatientActiveChose obj={[obj]} key={index} setted={checked} updateCount={count}/> : <Patient obj={[obj]}/>}</div>
             ))}
         </div>
       </div>
       <div className="App__MainBody__RightBlock">
-        <PatientBlock />
-        <PatientNavBar />
+        <PatientBlock obj={[people[0]]}/>
+        <PatientNavBar checkActive={checkActive} currentActive={currentActive}/>
         <div className="App__MainBody__RightBlock__NavBody">
-          <Notes />
-          <div className="App__MainBody__RightBlock__NavBody__TextBody">
-            <span className="App__MainBody__RightBlock__NavBody__TextBody__Date">
-              20.12.2019
-            </span>
-            <span className="App__MainBody__RightBlock__NavBody__TextBody__Text">
-              Физические упражнения способствуют активизации мышечных
-              сокращений, кровотока в тканях, снимают отечность, повышают
-              энергетические возможности мышц. Улучшенное питание мышечной ткани
-              ускоряет замещение различных посттравматических дефектов в самих
-              мышцах, костной ткани, связках и сухожилиях.
-            </span>
-          </div>
+            {ArrayComponents[currentActive]}
         </div>
       </div>
     </div>

@@ -15,9 +15,19 @@ const AddList:Array<string> = [
     'Рекомендовать',
     'Рекомендовать'
 ]
+interface Props {
+    checkActive:(currentActive:number)=>void
+    currentActive:number
+}
 
-const PatientNavBar = () => {
+const PatientNavBar = ({checkActive,currentActive}:Props) => {
     const [active,setActive] = useState(0);
+
+    function Activate(i:number){
+        setActive(i);
+        currentActive=i;
+        checkActive(i);
+    }
 
     return (
     <div className="App__MainBody__RightBlock__PatientNavBar">
@@ -26,7 +36,7 @@ const PatientNavBar = () => {
           <span
             className="App__MainBody__RightBlock__PatientNavBar__NavButton"
             style={index===active ? {color: "#4198C5" } : {}}
-            onClick={()=> setActive(index)}
+            onClick={()=> Activate(index)}
           >
             {value}
           </span>

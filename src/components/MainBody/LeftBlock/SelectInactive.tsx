@@ -22,6 +22,7 @@ const SelectInactive = ({selectButton,currentCount,setAll}:Props) => {
         }else setCount(currentCount)
     }
 
+    // @ts-ignore
     return (
         <div className="App__MainBody__LeftBlock__Counter" style={{gap:'0px'}}>
             <div className="App__MainBody__LeftBlock__Counter__LeftIcons">
