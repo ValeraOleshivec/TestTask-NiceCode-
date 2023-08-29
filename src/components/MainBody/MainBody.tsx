@@ -13,49 +13,41 @@ import SelectInactive from "./LeftBlock/SelectInactive";
 import Consultation from "./RightBlock/PattientBody/Consultation";
 import Video from "./RightBlock/PattientBody/Video";
 import Event from "./RightBlock/PattientBody/Event";
+import App from "../../App";
 
 const MainBody = () => {
 
 
-    let [people,setPeople] = useState([])
-
-
+    const [people,setPeople] = useState([])
+    const [active,setActive] = useState(false)
+    const[currentCount,setCurrentCount] = useState(213);
+    const [checked,setChecked] = useState(false)
+    const [currentActive,setNavigate]=useState(0)
     const ArrayComponents:Array<any>=[
         <Notes/>,
         <Consultation/>,
         <Video/>,
         <Event/>
-
     ]
 
     const ArryPatient:Array<number>=[
         1,2,3,4,5,6,7,8,9,10,11,12
     ]
-    const [active,setActive] = useState(false)
 
     function selectButton(id:number){
-        console.log(id)
         setActive(!active)
         setCurrentCount(0)
     }
-    const[currentCount,setCurrentCount] = useState(213);
     function count(updateCount:number){
-        console.log(updateCount)
         if (updateCount){
             setCurrentCount(currentCount+1)
         }else setCurrentCount(currentCount-1)
-        console.log(currentCount)
     }
-    const [checked,setChecked] = useState(false)
-    const [currentActive,setNavigate]=useState(0)
     function setAll(setted:boolean){
         setChecked(setted)
-        console.log(checked)
     }
-    let ActiveBar:number = 0
     function checkActive(currentActive:number){
         setNavigate(currentActive)
-        console.log(ActiveBar)
     }
     useEffect(()=>{
         fetch("https://64ed912a1f87218271416407.mockapi.io/People").then((res)=>{

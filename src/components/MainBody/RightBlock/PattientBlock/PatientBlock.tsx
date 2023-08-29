@@ -11,20 +11,20 @@ interface Props {
     obj: People[];
 }
 let count = 0
+let Title:string = ''
 const PatientBlock = ({obj}:Props) => {
     const [popUp,setPopUp] = useState(false);
-    let name:any = ''
-    name = obj.reduce(function (value){
-        return value
+     obj.map((value)=>{
+        if (value){
+            Title=value.name
+        }else Title=''
     })
     count ++
-    console.log(name)
-    console.log(count)
     return (
         <div className="App__MainBody__RightBlock__PattientBlock">
             <p className="App__MainBody__RightBlock__PattientBlock__Image">Фото</p>
             <div className="App__MainBody__RightBlock__PattientBlock__InfoBlock">
-                <p className="App__MainBody__RightBlock__PattientBlock__InfoBlock__Name"></p>
+                <p className="App__MainBody__RightBlock__PattientBlock__InfoBlock__Name">{Title}</p>
                 <p className="App__MainBody__RightBlock__PattientBlock__InfoBlock__Age">30 лет,муж</p>
             </div>
             <div className="App__MainBody__RightBlock__PattientBlock__PopUpButton">
