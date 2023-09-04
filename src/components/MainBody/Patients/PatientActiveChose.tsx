@@ -8,25 +8,43 @@ interface People {
 
 interface Props {
   updateCount: any;
-  setted: boolean;
-  obj: { name: string; imageUrl: string };
+  index: number;
+  obj: { name: string; imageUrl: string; id: number };
+  arrayPeople: number[];
 }
-const PatientActiveChose = ({ updateCount, setted, obj }: Props) => {
-  const [counter, setCounter] = useState(1);
-  const [checkedD, setChecked] = useState(false);
+const PatientActiveChose = ({
+  updateCount,
+  obj,
+  index,
+  arrayPeople,
+}: Props) => {
+  const [checkedD, setChecked] = useState<boolean>();
   function countUpdate() {
-    setChecked(!checkedD);
-    if (checkedD) {
-      setCounter(1);
-    } else setCounter(0);
-    updateCount(counter);
+    setChecked(arrayPeople.includes(obj.id));
+    if (arrayPeople.includes(Number(obj.id))) {
+      deleteElement(obj.id);
+    } else {
+      arrayPeople.push(Number(obj.id));
+    }
+    updateCount(arrayPeople.length);
   }
+
+  function deleteElement(deleteValue: number) {
+    for (let i = 0; i < arrayPeople.length; i++) {
+      console.log(deleteValue, "    ", arrayPeople[i]);
+      if (arrayPeople[i] == deleteValue) {
+        arrayPeople.splice(i, 1);
+      }
+    }
+  }
+
   return (
     <div className="App__MainBody__LeftBlock__PatientsList__Card">
       <input
         type="checkbox"
         className="App__MainBody__LeftBlock__PatientsList__Card__CheckBox"
-        {...(setted ? { checked: true } : {})}
+        key={Number(obj.id)}
+        {...(arrayPeople.includes(Number(obj.id)) ? { checked: true } : {})}
         onClick={countUpdate}
       />
       <div

@@ -15,13 +15,15 @@ const MainBody = () => {
     {
       name: "",
       imageUrl: "",
+      id: 0,
     },
   ]);
   const [active, setActive] = useState(false);
-  const [currentCount, setCurrentCount] = useState(213);
+  const [currentCount, setCurrentCount] = useState(people.length);
   const [checked, setChecked] = useState(false);
   const [currentActive, setNavigate] = useState(0);
   let [activePeople, setActivePeople] = useState(0);
+  const [arraySelectPeoples, setArray] = useState<number[]>([0]);
 
   const ArrayComponents: Array<any> = [
     <Notes />,
@@ -32,35 +34,27 @@ const MainBody = () => {
 
   function selectButton(id: number) {
     setActive(!active);
-    setCurrentCount(0);
+    setCurrentCount(people.length);
   }
   function count(updateCount: number) {
-    if (updateCount) {
-      setCurrentCount(currentCount + 1);
-    } else setCurrentCount(currentCount - 1);
-  }
-  function setAll(setted: boolean) {
-    setChecked(setted);
+    console.log(updateCount);
+    setCurrentCount(updateCount);
   }
   function checkActive(currentActive: number) {
     setNavigate(currentActive);
   }
-
   async function getJson() {
     const response = await fetch(
       "https://64ed912a1f87218271416407.mockapi.io/People",
     );
     const people = await response.json();
     await setPeople(people);
+    setCurrentCount(people.length);
   }
   useEffect(() => {
     getJson();
   }, []);
-  let key: number = 0;
-  function ActivatePeople(current: number) {
-    setActivePeople(current);
-  }
-  console.log(people);
+  console.log(arraySelectPeoples);
   return (
     <div className="App__MainBody">
       <div className="App__MainBody__LeftBlock">
@@ -70,9 +64,9 @@ const MainBody = () => {
         <div>
           {active ? (
             <SelectInactive
-              setAll={setAll}
+              setPeople={setArray}
               selectButton={selectButton}
-              currentCount={currentCount}
+              currentCount={arraySelectPeoples.length}
             />
           ) : (
             <SelectActive
@@ -88,9 +82,10 @@ const MainBody = () => {
               <div>
                 {active ? (
                   <PatientActiveChose
+                    arrayPeople={arraySelectPeoples}
                     obj={obj}
-                    key={index}
-                    setted={checked}
+                    key={obj.id}
+                    index={index}
                     updateCount={count}
                   />
                 ) : (
