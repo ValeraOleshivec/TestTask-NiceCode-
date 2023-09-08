@@ -1,6 +1,5 @@
 import React from 'react';
 import {BsArrowDown, BsFilterRight, BsPlusLg} from "react-icons/bs";
-import {CiSearch} from "react-icons/ci";
 
 interface NoActiveVariebleProps{
     active: boolean;
