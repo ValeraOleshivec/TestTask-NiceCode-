@@ -5,9 +5,10 @@ interface Props {
   currentCount: any;
   setPeople: ([]) => void;
   arrayPeople:any
+  arraySelectPeoples:any;
 }
 
-const SelectInactive = ({ selectButton, currentCount, setPeople,arrayPeople }: Props) => {
+const SelectInactive = ({ selectButton, currentCount, setPeople,arrayPeople,arraySelectPeoples }: Props) => {
   const [counter, setCounter] = useState(true);
   let [count, setCount] = useState(currentCount);
 
@@ -22,12 +23,14 @@ const SelectInactive = ({ selectButton, currentCount, setPeople,arrayPeople }: P
     selectButton();
     setPeople([0]);
   }
+  
   return (
     <div className="App__MainBody__LeftBlock__Counter" style={{ gap: "0px" }}>
       <div className="App__MainBody__LeftBlock__Counter__LeftIcons">
         <input
           className="App__MainBody__LeftBlock__Counter__LeftIcons__CheckBox"
           type="checkbox"
+          {...(arraySelectPeoples.length===arrayPeople.length) ? { checked: true } : {}}
           onClick={check}
         />
         <p className="App__MainBody__LeftBlock__Counter__LeftIcons__Text">

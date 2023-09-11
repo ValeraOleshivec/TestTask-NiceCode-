@@ -31,7 +31,6 @@ const PatientActiveChose = ({
 
   function deleteElement(deleteValue: number) {
     for (let i = 0; i < arrayPeople.length; i++) {
-      console.log(deleteValue, "    ", arrayPeople[i]);
       if (arrayPeople[i] == deleteValue) {
         arrayPeople.splice(i, 1);
       }

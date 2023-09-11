@@ -72,6 +72,7 @@ const MainBody = () => {
               selectButton={selectButton}
               currentCount={arraySelectPeoples.length}
               arrayPeople={arrayPeople}
+              arraySelectPeoples={arraySelectPeoples}
             />
           ) : (
             <SelectActive
