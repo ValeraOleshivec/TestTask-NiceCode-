@@ -4,16 +4,17 @@ interface Props {
   selectButton: any;
   currentCount: any;
   setPeople: ([]) => void;
+  arrayPeople:any
 }
 
-const SelectInactive = ({ selectButton, currentCount, setPeople }: Props) => {
+const SelectInactive = ({ selectButton, currentCount, setPeople,arrayPeople }: Props) => {
   const [counter, setCounter] = useState(true);
   let [count, setCount] = useState(currentCount);
 
   function check() {
     setCounter(!counter);
     if (counter) {
-      setPeople([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+      setPeople(arrayPeople);
     } else setPeople([0]);
     setCount(currentCount);
   }

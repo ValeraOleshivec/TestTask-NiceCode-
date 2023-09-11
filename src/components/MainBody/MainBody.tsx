@@ -54,7 +54,11 @@ const MainBody = () => {
   useEffect(() => {
     getJson();
   }, []);
-  console.log(arraySelectPeoples);
+  let countPeople:number=0
+  let arrayPeople = people.map((value,index)=>{
+    return index
+  })
+  console.log(arrayPeople)
   return (
     <div className="App__MainBody">
       <div className="App__MainBody__LeftBlock">
@@ -67,6 +71,7 @@ const MainBody = () => {
               setPeople={setArray}
               selectButton={selectButton}
               currentCount={arraySelectPeoples.length}
+              arrayPeople={arrayPeople}
             />
           ) : (
             <SelectActive
